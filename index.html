@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExitLag Clone for Valorant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ExitLag Clone - Optimize Valorant Connection</h1>
+        <div id="input-section">
+            <label>Your Location (City/Region): 
+                <input type="text" id="user-location" placeholder="e.g., New York, USA">
+            </label>
+            <label>Internet Speed (Mbps): 
+                <input type="number" id="internet-speed" value="50" min="1" max="1000">
+            </label>
+            <button id="enable-btn">Enable Optimization</button>
+            <button id="apply-routes-btn" disabled>Apply Routes</button>
+            <label>Manual Region: 
+                <select id="region-select" disabled>
+                    <option value="">Auto</option>
+                    <option value="us-east">US East (Virginia)</option>
+                    <option value="us-west">US West (California)</option>
+                    <option value="eu">EU (Frankfurt)</option>
+                    <option value="asia">Asia (Singapore)</option>
+                    <option value="sa">South America (São Paulo)</option>
+                </select>
+            </label>
+            <button id="fps-boost-btn">Enable FPS Boost</button>
+        </div>
+        <div id="overlay" style="display: none;">
+            <p>Ping: <span id="overlay-ping">N/A</span>ms</p>
+            <p>Packet Loss: <span id="overlay-loss">N/A</span>%</p>
+            <p>Hops: <span id="overlay-hops">N/A</p>
+        </div>
+        <div id="results" style="display: none;">
+            <h2>Server Route Analysis</h2>
+            <table id="server-table">
+                <thead>
+                    <tr>
+                        <th>Server Region</th>
+                        <th>Estimated Ping (ms)</th>
+                        <th>Packet Loss (%)</th>
+                        <th>Hops</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="server-table-body"></tbody>
+            </table>
+            <p id="recommendation"></p>
+        </div>
+        <div id="tips">
+            <h2>Optimization Tips</h2>
+            <p>Use a wired connection (Ethernet) for stability.</p>
+            <p>Close background apps (e.g., streaming, downloads).</p>
+            <p>Restart your router to refresh your connection.</p>
+            <p>Use Google DNS (8.8.8.8) for better routing.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
