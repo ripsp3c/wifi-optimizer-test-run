@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExitLag Clone for Valorant</title>
+    <title>ExitLag Clone (Web-Based)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>ExitLag Clone - Optimize Valorant Connection</h1>
+        <h1>ExitLag Clone - Optimize Your Game</h1>
         <div id="input-section">
+            <label>Select Game: 
+                <select id="game-select">
+                    <option value="valorant">Valorant</option>
+                    <option value="fortnite">Fortnite</option>
+                    <option value="league">League of Legends</option>
+                    <option value="custom">Custom Game</option>
+                </select>
+            </label>
+            <label>Custom Game Server (Region): 
+                <input type="text" id="custom-server" placeholder="e.g., US East" style="display: none;">
+            </label>
             <label>Your Location (City/Region): 
                 <input type="text" id="user-location" placeholder="e.g., New York, USA">
             </label>
@@ -21,19 +32,19 @@
             <label>Manual Region: 
                 <select id="region-select" disabled>
                     <option value="">Auto</option>
-                    <option value="us-east">US East (Virginia)</option>
-                    <option value="us-west">US West (California)</option>
-                    <option value="eu">EU (Frankfurt)</option>
-                    <option value="asia">Asia (Singapore)</option>
-                    <option value="sa">South America (São Paulo)</option>
+                    <option value="us-east">US East</option>
+                    <option value="us-west">US West</option>
+                    <option value="eu">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="sa">South America</option>
                 </select>
             </label>
-            <button id="fps-boost-btn">Enable FPS Boost</button>
+            <button id="fps-boost-btn" disabled>Enable FPS Boost</button>
         </div>
         <div id="overlay" style="display: none;">
             <p>Ping: <span id="overlay-ping">N/A</span>ms</p>
             <p>Packet Loss: <span id="overlay-loss">N/A</span>%</p>
-            <p>Hops: <span id="overlay-hops">N/A</p>
+            <p>Hops: <span id="overlay-hops">N/A</span></p>
         </div>
         <div id="results" style="display: none;">
             <h2>Server Route Analysis</h2>
